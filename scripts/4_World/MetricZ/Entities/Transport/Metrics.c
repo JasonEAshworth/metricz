@@ -187,7 +187,7 @@ class MetricZ_TransportMetrics : MetricZ_EntityMetricsBase
 			return;
 		}
 
-#ifdef EXPANSIONMODVEHICLE
+#ifdef EXPANSIONMODVEHICLE_DISABLED_1_30
 		ExpansionVehicleBase expVehicle;
 		if (Class.CastTo(expVehicle, m_Transport)) {
 			m_EngineOn.Set(MetricZ_LabelUtils.Bool(expVehicle.Expansion_EngineIsOn()));

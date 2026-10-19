@@ -5,7 +5,12 @@
 */
 
 #ifdef SERVER
-#ifdef EXPANSIONMODVEHICLE
+// DayZ 1.30 fix: current DayZ-Expansion reworked vehicles onto vanilla CarScript and reduced
+// ExpansionVehicleBase to an obsolete stub, so Expansion_EngineIsOn()/GetFluidFraction()/
+// Expansion_IsBoat()/Expansion_IsHelicopter()/Expansion_IsPlane() no longer exist on it.
+// Guarding this obsolete class out stops the World-module compile failure. Expansion vehicles
+// are still counted/classified via the CarScript path (CarScript.c, which uses IsInherited).
+#ifdef EXPANSIONMODVEHICLE_DISABLED_1_30
 /**
     \brief Updates MetricZ counters on spawn/cleanup and kills expansion vehicles.
 */

@@ -94,7 +94,7 @@ class MetricZ_EntitiesWriter
 					HelicopterScript heli = HelicopterScript.Cast(transport);
 					if (heli)
 						tm = heli.MetricZ_GetMetrics();
-#ifdef EXPANSIONMODVEHICLE
+#ifdef EXPANSIONMODVEHICLE_DISABLED_1_30
 					else {
 						ExpansionVehicleBase expansionVeh = ExpansionVehicleBase.Cast(transport);
 						if (expansionVeh)
